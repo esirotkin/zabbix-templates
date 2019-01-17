@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-09T20:27:22Z</date>
+    <date>2019-01-17T23:27:10Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -508,7 +508,7 @@
             <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.last()}&lt;80</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Capacity 80%</name>
+            <name>AirMax Capacity &lt; 80%</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -524,7 +524,7 @@
             <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.last()}&lt;80</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Quality 80%</name>
+            <name>AirMax Quality &lt; 80%</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -537,32 +537,32 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatRxRate.1.last()}&lt;216</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatSignal.1.last()}&lt;-90</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Receive is less than 216</name>
+            <name>Signal Strength &lt; -90 dBm</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>1</status>
+            <status>0</status>
             <priority>2</priority>
-            <description>AirMax Receive is less than 216Mbits</description>
+            <description/>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatTxRate.1.last()}&lt;216</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatCcq.1.last()}&lt;80</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Transmit is less than 216</name>
+            <name>Transmit CCQ &lt; 80</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>1</status>
+            <status>0</status>
             <priority>2</priority>
-            <description>AirMax Transmit is less than 216</description>
+            <description/>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>

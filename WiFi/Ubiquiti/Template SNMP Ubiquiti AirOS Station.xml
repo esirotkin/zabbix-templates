@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-09T20:25:30Z</date>
+    <date>2019-01-17T23:27:28Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1678,22 +1678,6 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>({Template SNMP Ubiquiti AirOS Station:ifInOctets.5.avg(300)} &gt; 75M) or ({Template SNMP Ubiquiti AirOS Station:ifOutOctets.5.avg(300)} &gt; 75M)</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Eth0 75Mb</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
             <expression>({Template SNMP Ubiquiti AirOS Station:ifOperStatus.5.last(0)}=2) and ({Template SNMP Ubiquiti AirOS Station:ifAdminStatus.5.last(0)}=1)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -1701,7 +1685,7 @@
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>2</priority>
             <description>Link down on {HOSTNAME} Ath0</description>
             <type>0</type>
@@ -1717,7 +1701,7 @@
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>1</priority>
             <description>Link down on {HOSTNAME} Eth0</description>
             <type>0</type>
@@ -1765,8 +1749,8 @@
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
-            <status>0</status>
-            <priority>2</priority>
+            <status>1</status>
+            <priority>1</priority>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
