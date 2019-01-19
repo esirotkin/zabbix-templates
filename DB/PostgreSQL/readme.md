@@ -3,7 +3,10 @@ The original source for this template is the [2ndQuadrant repository](https://gi
 
 For this template to work correctly, you need:
 * copy the `zabbix_agentd.d/userparameter_postgresql.conf` config to the corresponding directory of Zabbix Agent on the PostgreSQL server;
-* create the extension "pg_buffercache" on the PostgreSQL server;
+* on PostgreSQL server:
+    * create a zabbix user with superuser privileges;
+    * create zabbix database owned by zabbix user;
+    * create the "pg_buffercache" extension;
 * place the config with zabbix user credentials (`.pgpass`) in the home directory of Zabbix Agent.
 
 If the home directory of the Zabbix Agent is the `/var/run/zabbix` directory, then since it is cleared upon reboot, you will need to automate the copying of the psql passwords file into it.
