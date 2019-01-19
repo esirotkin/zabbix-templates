@@ -1,4 +1,5 @@
 This template is designed to monitor the PostgreSQL database server.
+
 The original source for this template is the [2ndQuadrant repository](https://github.com/2ndQuadrant/zabbix_templates).
 
 For this template to work correctly, you need:
@@ -9,7 +10,9 @@ For this template to work correctly, you need:
     * create the "pg_buffercache" extension;
 * place the config with zabbix user credentials (`.pgpass`) in the home directory of Zabbix Agent.
 
+
 If the home directory of the Zabbix Agent is the `/var/run/zabbix` directory, then since it is cleared upon reboot, you will need to automate the copying of the psql passwords file into it.
+
 For example:
 ```bash
 cat << EOF > /etc/rc.local
