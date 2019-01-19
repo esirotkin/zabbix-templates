@@ -1,5 +1,6 @@
 This templates are designed for monitoring of WiFi equipment Ubiquiti.
-The MIB files (from ./mibs) should be placed in the directory /usr/share/snmp/mibs.
+
+The MIB files (from `./mibs`) should be placed in the directory `/usr/share/snmp/mibs`.
 
 Additional links to official UBNT MIBs:
 * for [AirOS](https://www.ubnt.com/downloads/firmwares/airos-ubnt-mib/ubnt-mib.zip)
