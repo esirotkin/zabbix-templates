@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-17T23:27:10Z</date>
+    <date>2019-01-19T20:53:03Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -505,55 +505,55 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.last()}&lt;80</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.last()}&lt;30</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Capacity &lt; 80%</name>
+            <name>AirMax Capacity &lt; 30%</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
             <status>1</status>
-            <priority>2</priority>
-            <description>Air Capacity has dropped below 80%</description>
+            <priority>1</priority>
+            <description>AirMax Capacity has dropped below 30%.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
+            <manual_close>1</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.last()}&lt;80</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.last()}&lt;70</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>AirMax Quality &lt; 80%</name>
+            <name>AirMax Quality &lt; 70%</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
             <status>1</status>
-            <priority>2</priority>
-            <description/>
+            <priority>1</priority>
+            <description>AirMax Quality has dropped below 70%.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
+            <manual_close>1</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatSignal.1.last()}&lt;-90</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatSignal.1.last()}&lt;=-90</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>Signal Strength &lt; -90 dBm</name>
+            <name>Signal Strength &lt;= -90 dBm</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
-            <description/>
+            <description>Signal Strength has dropped below -90 dBm!</description>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatCcq.1.last()}&lt;80</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatCcq.1.count(5m,80,lt)}&gt;5</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Transmit CCQ &lt; 80</name>
@@ -561,8 +561,8 @@
             <correlation_tag/>
             <url/>
             <status>0</status>
-            <priority>2</priority>
-            <description/>
+            <priority>1</priority>
+            <description>In the last 5 minutes the Transmit CCQ value was less than 80 more than 5 times.</description>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
