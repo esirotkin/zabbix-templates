@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-20T09:21:08Z</date>
+    <date>2019-01-23T09:19:11Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -505,7 +505,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.last()}&lt;30</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.count(1h,30,lt)}&gt;100</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>AirMax Capacity &lt; 30%</name>
@@ -514,14 +514,14 @@
             <url/>
             <status>1</status>
             <priority>1</priority>
-            <description>AirMax Capacity has dropped below 30%.</description>
+            <description>AirMax Capacity has dropped below 30% more than 100 times per last hour.</description>
             <type>0</type>
             <manual_close>1</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.last()}&lt;70</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.count(1h,70,lt)}&gt;100</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>AirMax Quality &lt; 70%</name>
@@ -530,7 +530,7 @@
             <url/>
             <status>1</status>
             <priority>1</priority>
-            <description>AirMax Quality has dropped below 70%.</description>
+            <description>AirMax Quality has dropped below 70% more than 100 times per last hour.</description>
             <type>0</type>
             <manual_close>1</manual_close>
             <dependencies/>
