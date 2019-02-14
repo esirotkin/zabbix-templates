@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-09T20:28:22Z</date>
+    <date>2019-02-14T23:03:30Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template JMX Generic CMS</template>
-            <name>Template JMX Generic CMS</name>
+            <template>Template JMX Generic</template>
+            <name>Template JMX Generic</name>
             <description/>
             <groups>
                 <group>
@@ -45,14 +45,14 @@
             </applications>
             <items>
                 <item>
-                    <name>cl Loaded Class Count</name>
+                    <name>Loaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -104,14 +104,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>cl Total Loaded Class Count</name>
+                    <name>Total Loaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=ClassLoading&quot;,TotalLoadedClassCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -163,14 +163,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>cl Unloaded Class Count</name>
+                    <name>Unloaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=ClassLoading&quot;,UnloadedClassCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -222,7 +222,7 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>comp Name of the current JIT compiler</name>
+                    <name>Name of the current JIT compiler</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -281,14 +281,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>comp Accumulated time spent in compilation</name>
+                    <name>Accumulated time spent in compilation</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Compilation&quot;,TotalCompilationTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -345,14 +345,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc ConcurrentMarkSweep number of collections per second</name>
+                    <name>ConcurrentMarkSweep number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -409,14 +409,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc ConcurrentMarkSweep accumulated time spent in collection</name>
+                    <name>ConcurrentMarkSweep accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -473,14 +473,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc Copy number of collections per second</name>
+                    <name>Copy number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -537,14 +537,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc Copy accumulated time spent in collection</name>
+                    <name>Copy accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -601,14 +601,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc MarkSweepCompact number of collections per second</name>
+                    <name>MarkSweepCompact number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -665,14 +665,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc MarkSweepCompact accumulated time spent in collection</name>
+                    <name>MarkSweepCompact accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -729,14 +729,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc ParNew number of collections per second</name>
+                    <name>ParNew number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -793,14 +793,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc ParNew accumulated time spent in collection</name>
+                    <name>ParNew accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -857,14 +857,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc PS MarkSweep number of collections per second</name>
+                    <name>PS MarkSweep number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -921,14 +921,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc PS MarkSweep accumulated time spent in collection</name>
+                    <name>PS MarkSweep accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -985,14 +985,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc PS Scavenge number of collections per second</name>
+                    <name>PS Scavenge number of collections per second</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -1049,14 +1049,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>gc PS Scavenge accumulated time spent in collection</name>
+                    <name>PS Scavenge accumulated time spent in collection</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionTime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -1113,14 +1113,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Heap Memory committed</name>
+                    <name>Heap Memory committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1172,14 +1172,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Heap Memory max</name>
+                    <name>Heap Memory max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1231,14 +1231,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Heap Memory used</name>
+                    <name>Heap Memory used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1290,14 +1290,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory committed</name>
+                    <name>Non-Heap Memory committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1349,14 +1349,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory max</name>
+                    <name>Non-Heap Memory max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1408,14 +1408,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory used</name>
+                    <name>Non-Heap Memory used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1467,14 +1467,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mem Object Pending Finalization Count</name>
+                    <name>Object Pending Finalization Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Memory&quot;,ObjectPendingFinalizationCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1526,14 +1526,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Old Gen committed</name>
+                    <name>CMS Old Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1585,14 +1585,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Old Gen max</name>
+                    <name>CMS Old Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1644,14 +1644,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Old Gen used</name>
+                    <name>CMS Old Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1703,14 +1703,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Perm Gen committed</name>
+                    <name>CMS Perm Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1762,14 +1762,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Perm Gen max</name>
+                    <name>CMS Perm Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1821,14 +1821,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp CMS Perm Gen used</name>
+                    <name>CMS Perm Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1880,14 +1880,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Code Cache committed</name>
+                    <name>Code Cache committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1939,14 +1939,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Code Cache max</name>
+                    <name>Code Cache max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1998,14 +1998,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Code Cache used</name>
+                    <name>Code Cache used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2057,14 +2057,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Perm Gen committed</name>
+                    <name>Perm Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2116,14 +2116,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Perm Gen max</name>
+                    <name>Perm Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2175,14 +2175,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Perm Gen used</name>
+                    <name>Perm Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2234,14 +2234,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Old Gen committed</name>
+                    <name>PS Old Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2293,14 +2293,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Old Gen max</name>
+                    <name>PS Old Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2352,14 +2352,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Old Gen used</name>
+                    <name>PS Old Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2411,14 +2411,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Perm Gen committed</name>
+                    <name>PS Perm Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2470,14 +2470,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Perm Gen max</name>
+                    <name>PS Perm Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2529,14 +2529,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp PS Perm Gen used</name>
+                    <name>PS Perm Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2588,14 +2588,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Tenured Gen committed</name>
+                    <name>Tenured Gen committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2647,14 +2647,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Tenured Gen max</name>
+                    <name>Tenured Gen max</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2706,14 +2706,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>mp Tenured Gen used</name>
+                    <name>Tenured Gen used</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.used]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2765,14 +2765,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>os Max File Descriptor Count</name>
+                    <name>Max File Descriptor Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount]</key>
                     <delay>1h</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2824,14 +2824,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>os Open File Descriptor Count</name>
+                    <name>Open File Descriptor Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -2883,14 +2883,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>os Process CPU Load</name>
+                    <name>Process CPU Load</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -2947,14 +2947,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>jvm Uptime</name>
+                    <name>JVM Uptime</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Runtime&quot;,Uptime]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -3011,7 +3011,7 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>jvm Name</name>
+                    <name>JVM Name</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -3070,7 +3070,7 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>jvm Version</name>
+                    <name>JVM Version</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -3129,14 +3129,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>th Daemon Thread Count</name>
+                    <name>Daemon Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Threading&quot;,DaemonThreadCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -3188,14 +3188,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>th Peak Thread Count</name>
+                    <name>Peak Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Threading&quot;,PeakThreadCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -3247,14 +3247,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>th Thread Count</name>
+                    <name>Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Threading&quot;,ThreadCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -3306,14 +3306,14 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>th Total Started Thread Count</name>
+                    <name>Total Started Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=Threading&quot;,TotalStartedThreadCount]</key>
                     <delay>1m</delay>
                     <history>1w</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -3392,7 +3392,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Memory Pool Overview</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3414,7 +3414,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Garbage Collector (1s intervals)</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3436,7 +3436,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Memory Overview</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3458,7 +3458,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Threads</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3480,7 +3480,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>Class Loader</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3502,7 +3502,7 @@
                             <sort_triggers>0</sort_triggers>
                             <resource>
                                 <name>File Descriptors</name>
-                                <host>Template JMX Generic CMS</host>
+                                <host>Template JMX Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
                             <application/>
@@ -3514,10 +3514,10 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mem Heap Memory used on {HOST.NAME}</name>
+            <name>70% CMS Old Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3530,10 +3530,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mem Non-Heap Memory used on {HOST.NAME}</name>
+            <name>70% CMS Perm Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3546,10 +3546,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp CMS Old Gen used on {HOST.NAME}</name>
+            <name>70% Code Cache used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3562,10 +3562,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp CMS Perm Gen used on {HOST.NAME}</name>
+            <name>70% Heap Memory used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3578,10 +3578,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp Code Cache used on {HOST.NAME}</name>
+            <name>70% Non-Heap Memory used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3594,10 +3594,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp Perm Gen used on {HOST.NAME}</name>
+            <name>70% Opened File Descriptor Count used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3610,10 +3610,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp PS Old Gen used on {HOST.NAME}</name>
+            <name>70% Perm Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3626,10 +3626,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad].last(0)}&gt;70</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp PS Perm Gen used on {HOST.NAME}</name>
+            <name>70% Process CPU Load on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3642,10 +3642,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% mp Tenured Gen used on {HOST.NAME}</name>
+            <name>70% PS Old Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3658,10 +3658,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount].last(0)}&gt;({Template JMX Generic CMS:jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% os Opened File Descriptor Count used on {HOST.NAME}</name>
+            <name>70% PS Perm Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3674,10 +3674,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad].last(0)}&gt;70</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max].last(0)}*0.7)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>70% os Process CPU Load on {HOST.NAME}</name>
+            <name>70% Tenured Gen used on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3690,58 +3690,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>gc Concurrent Mark Sweep in fire fighting mode on {HOST.NAME}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(0)}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>gc Mark Sweep Compact in fire fighting mode on {HOST.NAME}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic CMS:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(0)}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>gc PS Mark Sweep in fire fighting mode on {HOST.NAME}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>mem Heap Memory fully committed on {HOST.NAME}</name>
+            <name>CMS Old Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3754,10 +3706,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mem Non-Heap Memory fully committed on {HOST.NAME}</name>
+            <name>CMS Perm Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3770,10 +3722,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp CMS Old Gen fully committed on {HOST.NAME}</name>
+            <name>Code Cache fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3786,10 +3738,26 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp CMS Perm Gen fully committed on {HOST.NAME}</name>
+            <name>Concurrent Mark Sweep in fire fighting mode on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Heap Memory fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3802,10 +3770,26 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp Code Cache fully committed on {HOST.NAME}</name>
+            <name>Mark Sweep Compact in fire fighting mode on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Non-Heap Memory fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3818,10 +3802,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp Perm Gen fully committed on {HOST.NAME}</name>
+            <name>Perm Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3834,10 +3818,26 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp PS Old Gen fully committed on {HOST.NAME}</name>
+            <name>PS Mark Sweep in fire fighting mode on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max].last(0)}</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>PS Old Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3850,10 +3850,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp PS Perm Gen fully committed on {HOST.NAME}</name>
+            <name>PS Perm Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3866,10 +3866,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed].last(0)}={Template JMX Generic CMS:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max].last(0)}</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed].last(0)}={Template JMX Generic:jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max].last(0)}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>mp Tenured Gen fully committed on {HOST.NAME}</name>
+            <name>Tenured Gen fully committed on {HOST.NAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -3882,7 +3882,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].nodata(5m)}=1</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].nodata(5m)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} is not reachable</name>
@@ -3898,7 +3898,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Runtime&quot;,VmName].str(Server)}&lt;&gt;1</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Runtime&quot;,VmName].str(Server)}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} runs suboptimal VM type</name>
@@ -3914,7 +3914,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic CMS:jmx[&quot;java.lang:type=Compilation&quot;,Name].str(Client)}=1</expression>
+            <expression>{Template JMX Generic:jmx[&quot;java.lang:type=Compilation&quot;,Name].str(Client)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME} uses suboptimal JIT compiler</name>
@@ -3957,7 +3957,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=ClassLoading&quot;,TotalLoadedClassCount]</key>
                     </item>
                 </graph_item>
@@ -3969,7 +3969,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=ClassLoading&quot;,UnloadedClassCount]</key>
                     </item>
                 </graph_item>
@@ -3981,7 +3981,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount]</key>
                     </item>
                 </graph_item>
@@ -4013,7 +4013,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount]</key>
                     </item>
                 </graph_item>
@@ -4025,7 +4025,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount]</key>
                     </item>
                 </graph_item>
@@ -4057,7 +4057,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4069,7 +4069,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4081,7 +4081,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4093,7 +4093,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4105,7 +4105,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4117,7 +4117,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount]</key>
                     </item>
                 </graph_item>
@@ -4149,7 +4149,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used]</key>
                     </item>
                 </graph_item>
@@ -4161,7 +4161,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used]</key>
                     </item>
                 </graph_item>
@@ -4193,7 +4193,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4205,7 +4205,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4217,7 +4217,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4249,7 +4249,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4261,7 +4261,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4273,7 +4273,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4305,7 +4305,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4317,7 +4317,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4329,7 +4329,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4361,7 +4361,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4373,7 +4373,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4385,7 +4385,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4417,7 +4417,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4429,7 +4429,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4441,7 +4441,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4473,7 +4473,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4485,7 +4485,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4497,7 +4497,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4529,7 +4529,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4541,7 +4541,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4553,7 +4553,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4585,7 +4585,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
@@ -4597,7 +4597,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
@@ -4609,7 +4609,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
@@ -4641,7 +4641,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=Threading&quot;,PeakThreadCount]</key>
                     </item>
                 </graph_item>
@@ -4653,7 +4653,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=Threading&quot;,DaemonThreadCount]</key>
                     </item>
                 </graph_item>
@@ -4665,7 +4665,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template JMX Generic CMS</host>
+                        <host>Template JMX Generic</host>
                         <key>jmx[&quot;java.lang:type=Threading&quot;,ThreadCount]</key>
                     </item>
                 </graph_item>
