@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-02-25T15:02:54Z</date>
+    <date>2019-02-25T15:21:35Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2181,28 +2181,6 @@
                             <resourcetype>0</resourcetype>
                             <width>500</width>
                             <height>100</height>
-                            <x>1</x>
-                            <y>0</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>1</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Garbage Collector (20s intervals)</name>
-                                <host>Template JMX Generic Shenandoah</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>500</width>
-                            <height>100</height>
                             <x>0</x>
                             <y>1</y>
                             <colspan>1</colspan>
@@ -2588,62 +2566,6 @@
             </graph_items>
         </graph>
         <graph>
-            <name>Garbage Collector (20s intervals)</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>FFCCCC</color>
-                    <yaxisside>1</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic Shenandoah</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=Shenandoah Pauses&quot;,CollectionCount]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>990000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic Shenandoah</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=Shenandoah Pauses&quot;,CollectionTime]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>009900</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic Shenandoah</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=Shenandoah Cycles&quot;,CollectionTime]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
             <name>Memory Overview</name>
             <width>900</width>
             <height>200</height>
@@ -2744,7 +2666,7 @@
             </graph_items>
         </graph>
         <graph>
-            <name>Memory Pool G1 Eden Space</name>
+            <name>Memory Pool Compressed Class Space</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -2788,7 +2710,7 @@
             </graph_items>
         </graph>
         <graph>
-            <name>Memory Pool G1 Old Gen</name>
+            <name>Memory Pool Metaspace</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -2827,50 +2749,6 @@
                     <item>
                         <host>Template JMX Generic Shenandoah</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Metaspace&quot;,Usage.used]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>Memory Pool G1 Survivor Space</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00CC00</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic Shenandoah</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Shenandoah&quot;,Usage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>CC0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic Shenandoah</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Shenandoah&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -2939,6 +2817,50 @@
                     <item>
                         <host>Template JMX Generic Shenandoah</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Metaspace&quot;,Usage.used]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Memory Pool Shenandoah</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00CC00</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template JMX Generic Shenandoah</host>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Shenandoah&quot;,Usage.committed]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>CC0000</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template JMX Generic Shenandoah</host>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Shenandoah&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
             </graph_items>
