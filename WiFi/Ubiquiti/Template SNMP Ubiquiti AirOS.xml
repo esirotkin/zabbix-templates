@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-23T09:19:11Z</date>
+    <date>2019-04-09T07:02:32Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -31,7 +31,7 @@
                     <key>ubntAirMaxCapacity.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -90,7 +90,7 @@
                     <key>ubntAirMaxQuality.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -149,7 +149,7 @@
                     <key>ubntRadioFreq.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -208,7 +208,7 @@
                     <key>ubntWlStatCcq.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -267,7 +267,7 @@
                     <key>ubntWlStatNoiseFloor.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -326,7 +326,7 @@
                     <key>ubntWlStatRxRate.1</key>
                     <delay>10s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -385,7 +385,7 @@
                     <key>ubntWlStatSignal.1</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -444,7 +444,7 @@
                     <key>ubntWlStatTxRate.1</key>
                     <delay>10s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -505,7 +505,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.count(1h,30,lt)}&gt;100</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxCapacity.1.count(1h,30,lt)}&gt;=115</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>AirMax Capacity &lt; 30%</name>
@@ -521,7 +521,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.count(1h,70,lt)}&gt;100</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntAirMaxQuality.1.count(1h,70,lt)}&gt;=115</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>AirMax Quality &lt; 70%</name>
@@ -537,7 +537,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatSignal.1.count(1h,-89,lt)}&gt;100</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatSignal.1.count(1h,-89,lt)}&gt;=115</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Signal Strength &lt; -90 dBm</name>
@@ -553,7 +553,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatCcq.1.count(1h,80,lt)}&gt;100</expression>
+            <expression>{Template SNMP Ubiquiti AirOS:ubntWlStatCcq.1.count(1h,80,lt)}&gt;=115</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Transmit CCQ &lt; 80</name>

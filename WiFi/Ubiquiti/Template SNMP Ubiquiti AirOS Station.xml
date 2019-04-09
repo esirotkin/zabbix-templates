@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-01-19T20:53:29Z</date>
+    <date>2019-04-09T07:03:14Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -37,7 +37,7 @@
                     <key>icmpping</key>
                     <delay>1m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -94,7 +94,7 @@
                     <key>icmppingloss</key>
                     <delay>1m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -149,7 +149,7 @@
                     <key>icmppingsec</key>
                     <delay>1m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -204,7 +204,7 @@
                     <key>icmpping[&lt;target&gt;,&lt;packets&gt;,&lt;interval&gt;,&lt;size&gt;,&lt;timeout&gt;]</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -263,7 +263,7 @@
                     <key>ifAdminStatus.2</key>
                     <delay>5m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -322,7 +322,7 @@
                     <key>ifAdminStatus.3</key>
                     <delay>5m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -381,7 +381,7 @@
                     <key>ifAdminStatus.5</key>
                     <delay>5m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -440,7 +440,7 @@
                     <key>ifInErrors.2</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -504,7 +504,7 @@
                     <key>ifInErrors.3</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -568,7 +568,7 @@
                     <key>ifInErrors.5</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -632,7 +632,7 @@
                     <key>ifInOctets.2</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -700,7 +700,7 @@
                     <key>ifInOctets.3</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -768,7 +768,7 @@
                     <key>ifInOctets.5</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -836,7 +836,7 @@
                     <key>ifOperStatus.2</key>
                     <delay>10s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -895,7 +895,7 @@
                     <key>ifOperStatus.3</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -954,7 +954,7 @@
                     <key>ifOperStatus.5</key>
                     <delay>10s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1013,7 +1013,7 @@
                     <key>ifOutErrors.2</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1077,7 +1077,7 @@
                     <key>ifOutErrors.3</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1141,7 +1141,7 @@
                     <key>ifOutErrors.5</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1205,7 +1205,7 @@
                     <key>ifOutOctets.2</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1273,7 +1273,7 @@
                     <key>ifOutOctets.3</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1341,7 +1341,7 @@
                     <key>ifOutOctets.5</key>
                     <delay>30s</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1409,7 +1409,7 @@
                     <key>sysUpTime</key>
                     <delay>1m</delay>
                     <history>90d</history>
-                    <trends>365d</trends>
+                    <trends>730d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1710,7 +1710,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SNMP Ubiquiti AirOS Station:ubntFirmware.regexp(&quot;^X(M|W)\.ar[0-9]+[a-z]?\.(v6\.1\.[3-9]|v6\.[2-9]\.[0-9]).*&quot;)}=0</expression>
+            <expression>{Template SNMP Ubiquiti AirOS Station:ubntFirmware.regexp(&quot;^X(M|W)\.ar[0-9]+[a-z]?\.(v6\.1\.([3-9]|[1-2]?[0-9]+)|v6\.[2-9]\.[0-9]+).*&quot;)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOSTNAME} Firmware out of date {ITEM.LASTVALUE}</name>
