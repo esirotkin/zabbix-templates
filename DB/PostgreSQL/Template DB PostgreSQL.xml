@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-03-23T23:43:17Z</date>
+    <date>2021-03-24T20:13:54Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2280,7 +2280,7 @@
                 </macro>
                 <macro>
                     <macro>{$PG_PROCESS_NAME}</macro>
-                    <value>postmaster</value>
+                    <value>postgres</value>
                 </macro>
                 <macro>
                     <macro>{$PG_SR_LAG_BYTE}</macro>
