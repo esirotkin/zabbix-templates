@@ -8,6 +8,8 @@ For this template to work correctly, you need:
     * create a zabbix user with superuser privileges;
     * create zabbix database owned by zabbix user;
     * create the "pg_buffercache" extension;
+    * create the "pg_stat_statements" extension;
+    * create the "pgstattuple" extension;
 * place the config with zabbix user credentials (`.pgpass`) in the home directory of Zabbix Agent.
 
 

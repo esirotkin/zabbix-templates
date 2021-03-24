@@ -1,0 +1,3031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2021-03-23T23:43:17Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template DB PostgreSQL</template>
+            <name>Template DB PostgreSQL</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Background Writer</name>
+                </application>
+                <application>
+                    <name>Buffers &amp; Caches</name>
+                </application>
+                <application>
+                    <name>Configuration</name>
+                </application>
+                <application>
+                    <name>Connections</name>
+                </application>
+                <application>
+                    <name>Database: Autovacuum Freeze</name>
+                </application>
+                <application>
+                    <name>Databases</name>
+                </application>
+                <application>
+                    <name>Database Status</name>
+                </application>
+                <application>
+                    <name>General Information</name>
+                </application>
+                <application>
+                    <name>Operations</name>
+                </application>
+                <application>
+                    <name>PostgreSQL</name>
+                </application>
+                <application>
+                    <name>Streaming Replication</name>
+                </application>
+                <application>
+                    <name>Table Info: Bloat</name>
+                </application>
+                <application>
+                    <name>Transactions</name>
+                </application>
+                <application>
+                    <name>Write-Ahead Logging</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Buffers allocated</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.buffers_alloc[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Buffers written directly by a backend</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.buffers_backend[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Times a backend had to execute its own fsync</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.buffers_backend_fsync[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Buffers written during checkpoints</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.buffers_checkpoint[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Buffers written by the bgwriter</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.buffers_clean[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Required checkpoints</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.checkpoints_req[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_CHECKPOINTS_REQ_THRESHOLD}</expression>
+                            <name>PostgreSQL required checkpoints occurs to frequently on {HOSTNAME}</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Checkpoints by timeout</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.checkpoints_timed[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Sync time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.checkpoint_sync_time[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>ms</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Write time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.checkpoint_write_time[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>ms</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Max written</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.bgwriter.maxwritten_clean[{$PG_CONNINFO}]</key>
+                    <delay>600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>ms</units>
+                    <applications>
+                        <application>
+                            <name>Background Writer</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Clear buffers</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.buffercache.clear[{$PG_CONNINFO}]</key>
+                    <delay>300</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Buffers &amp; Caches</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Dirty buffers</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.buffercache.dirty[{$PG_CONNINFO}]</key>
+                    <delay>300</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Buffers &amp; Caches</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Total buffers</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.buffercache.total[{$PG_CONNINFO}]</key>
+                    <delay>300</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Buffers &amp; Caches</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Used buffers</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.buffercache.used[{$PG_CONNINFO}]</key>
+                    <delay>300</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Buffers &amp; Caches</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8192</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Cache hit ratio</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.cache.hit[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>Check cache hit ratio in %.</description>
+                    <applications>
+                        <application>
+                            <name>Buffers &amp; Caches</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;{$PG_CACHE_HIT_RATIO}</expression>
+                            <name>PostgreSQL cache hit ratio too low on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Number of active connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.active[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of active clients who connected to the PostgreSQL service and performing work.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Number of idle connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.idle[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of idle clients connected to the PostgreSQL service.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Number of idle in transaction connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.idle_in_transaction[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of idle clients who connected to the PostgreSQL service and have unfinished transaction. This client must be disconnected.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_CONN_IDLE_IN_TRANSACTION}</expression>
+                            <name>PostgreSQL idle in transaction connections to high on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Number of prepared connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.prepared[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of clients connected to the PostgreSQL service and blocked by others clients.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Total connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.total[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of clients connected to the PostgreSQL service.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Total connections (%)</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.total_pct[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>%</units>
+                    <description>Connections percentage of the maximum number of allowed connections (max_connections).</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_CONN_TOTAL_PCT}</expression>
+                            <name>PostgreSQL total number of connections to high on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Number of waiting connections</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.connections.waiting[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Total count of clients connected to the PostgreSQL service and blocked by others clients.</description>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_CONN_WAITING}</expression>
+                            <name>PostgreSQL number of waiting connections to high on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Blocks hit per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.blks_hit[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Blocks read per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.blks_read[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of disk blocks read</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Registered conflicts</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.conflicts[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.).</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_CONFLICTS_THRESHOLD}</expression>
+                            <name>PostgreSQL recovery conflict occured on {HOSTNAME}</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Registered deadlocks</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.deadlocks[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of deadlocks detected.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_DEADLOCKS_THRESHOLD}</expression>
+                            <name>PostgreSQL deadlock occured on {HOSTNAME}</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Temp bytes written</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.temp_bytes[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <description>Total amount of data written to temporary files by queries. All temporary files are counted, regardless of why the temporary file was created, and regardless of the log_temp_files setting.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Temp files created</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.temp_files[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of temporary files created by queries. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the log_temp_files setting.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Tuples deleted per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.tup_deleted[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of rows deleted by queries.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Tuples fetched per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.tup_fetched[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of rows fetched by queries.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Tuples inserted per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.tup_inserted[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of rows inserted by queries.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Tuples returned per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.tup_returned[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of rows returned by queries.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Tuples updated per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.tup_updated[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of rows updated by queries.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Commits per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.xact_commit[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of transactions that have been committed.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Rollbacks per second</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.dbstat.sum.xact_rollback[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of transactions that have been rolled back.</description>
+                    <applications>
+                        <application>
+                            <name>Database Status</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Average query time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.pgstatstatements.avg_query_time[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>ms</units>
+                    <applications>
+                        <application>
+                            <name>Operations</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Ping</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.ping[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>ms</units>
+                    <applications>
+                        <application>
+                            <name>Connections</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_PING_THRESHOLD_MS}</expression>
+                            <name>PostgreSQL response to long on {HOSTNAME} ({ITEM.LASTVALUE}</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Autovacuum freeze max age</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.setting[{$PG_CONNINFO},autovacuum_freeze_max_age]</key>
+                    <delay>21600</delay>
+                    <history>30d</history>
+                    <description>https://www.postgresql.org/docs/9.6/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-FREEZE-MAX-AGE</description>
+                    <applications>
+                        <application>
+                            <name>Configuration</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Fsync</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.setting[{$PG_CONNINFO},fsync]</key>
+                    <delay>21600</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>http://www.postgresql.org/docs/9.2/static/runtime-config-wal.html#GUC-FSYNC</description>
+                    <applications>
+                        <application>
+                            <name>Configuration</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Full page writes</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.setting[{$PG_CONNINFO},full_page_writes]</key>
+                    <delay>21600</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>http://www.postgresql.org/docs/9.2/static/runtime-config-wal.html#GUC-FULL-PAGE-WRITES</description>
+                    <applications>
+                        <application>
+                            <name>Configuration</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Synchronous commit</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.setting[{$PG_CONNINFO},synchronous_commit]</key>
+                    <delay>21600</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>http://www.postgresql.org/docs/9.2/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT</description>
+                    <applications>
+                        <application>
+                            <name>Configuration</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Stand-by count</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.streaming.count[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Streaming replication stand-bys count.</description>
+                    <applications>
+                        <application>
+                            <name>Streaming Replication</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Recovery state</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.streaming.state[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>Streaming replication state: t (true) if service is in recovery mode, and f (false) if server in master mode.</description>
+                    <applications>
+                        <application>
+                            <name>Streaming Replication</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Current max active transaction time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.transactions.active[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Transactions</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_LONG_QUERY_THRESHOLD}</expression>
+                            <name>PostgreSQL active transaction to long on {HOSTNAME} (time={ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Current max idle transaction time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.transactions.idle[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Transactions</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_LONG_QUERY_THRESHOLD}</expression>
+                            <name>PostgreSQL idle transaction to long on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Current max prepared transaction time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.transactions.prepared[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Transactions</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Current max waiting transaction time</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.transactions.waiting[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>s</units>
+                    <applications>
+                        <application>
+                            <name>Transactions</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;{$PG_LONG_QUERY_THRESHOLD}</expression>
+                            <name>PostgreSQL waiting transaction to long on {HOSTNAME} ({ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Service uptime</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.uptime[{$PG_CONNINFO}]</key>
+                    <delay>60</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>uptime</units>
+                    <applications>
+                        <application>
+                            <name>General Information</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;{$PG_UPTIME_THRESHOLD}</expression>
+                            <name>PostgreSQL service was restarted on {HOSTNAME} (uptime={ITEM.LASTVALUE})</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>PostgreSQL version</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.version[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <history>1d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>PostgreSQL version</description>
+                    <applications>
+                        <application>
+                            <name>General Information</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAL segments count</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.wal.count[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <description>Number of WAL segments stored in pg_xlog directory.</description>
+                    <applications>
+                        <application>
+                            <name>Write-Ahead Logging</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAL write</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.wal.write[{$PG_CONNINFO}]</key>
+                    <delay>120</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <units>b</units>
+                    <description>WAL write in bytes,.</description>
+                    <applications>
+                        <application>
+                            <name>Write-Ahead Logging</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>SIMPLE_CHANGE</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Number of running processes $1</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>proc.num[{$PG_PROCESS_NAME}]</key>
+                    <delay>30</delay>
+                    <history>30d</history>
+                    <trends>180d</trends>
+                    <applications>
+                        <application>
+                            <name>General Information</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>PostgreSQL service not running on {HOSTNAME}</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>PostgreSQL databases discovery</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.db.discovery[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <lifetime>7d</lifetime>
+                    <description>PostgreSQL database discovery. Use regular expressions to configure search.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#DBNAME}: age(datfrozenxid)</name>
+                            <type>DEPENDENT</type>
+                            <key>autovac_freeze_max_age.txns[{#DBNAME}]</key>
+                            <delay>0</delay>
+                            <description>https://www.postgresql.org/docs/9.6/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-FREEZE-MAX-AGE</description>
+                            <applications>
+                                <application>
+                                    <name>Database: Autovacuum Freeze</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.TXNS</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.db.autovac_freeze[{$PG_CONNINFO},{#DBNAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: age(datfrozenxid) (%)</name>
+                            <type>DEPENDENT</type>
+                            <key>autovac_freeze_max_age.txns_percent[{#DBNAME}]</key>
+                            <delay>0</delay>
+                            <description>https://www.postgresql.org/docs/9.6/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-FREEZE-MAX-AGE</description>
+                            <applications>
+                                <application>
+                                    <name>Database: Autovacuum Freeze</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.TXNS_PERCENT</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.db.autovac_freeze[{$PG_CONNINFO},{#DBNAME}]</key>
+                            </master_item>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;={$AUTOVAC_FREEZE_AGE_WARN_PERCENT} and {last()}&lt;{$AUTOVAC_FREEZE_AGE_CRITICAL_PERCENT}</expression>
+                                    <name>Autovacuum Freeze &gt; 90%</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;={$AUTOVAC_FREEZE_AGE_CRITICAL_PERCENT}</expression>
+                                    <name>Autovacuum Freeze &gt; 95%</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Get Autovacuum Freeze: {#DBNAME}</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.db.autovac_freeze[{$PG_CONNINFO},{#DBNAME}]</key>
+                            <delay>60s</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>database {#DBNAME} size</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.db.size[{$PG_CONNINFO},{#DBNAME}]</key>
+                            <delay>1800</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <units>b</units>
+                            <description>Single database size.</description>
+                            <applications>
+                                <application>
+                                    <name>Databases</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>PostgreSQL: database {#DBNAME} size</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>00BB00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.db.size[{$PG_CONNINFO},{#DBNAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>PostgreSQL streaming stand-by discovery</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.streaming.discovery[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <lifetime>1d</lifetime>
+                    <description>Low level discovery for streaming replication servers which connected to this server.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>packet loss with {#HOTSTANDBY}, %</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.packet_loss[{#HOTSTANDBY}]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <units>%</units>
+                            <applications>
+                                <application>
+                                    <name>Streaming Replication</name>
+                                </application>
+                            </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;{$PG_SR_PACKET_LOSS}</expression>
+                                    <name>PostgreSQL packet loss between {HOSTNAME} and {#HOTSTANDBY} to high ({ITEM.LASTVALUE})</name>
+                                    <priority>AVERAGE</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>streaming lag with {#HOTSTANDBY} in bytes</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.streaming.lag.bytes[{$PG_CONNINFO},{#HOTSTANDBY}]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <units>b</units>
+                            <applications>
+                                <application>
+                                    <name>Streaming Replication</name>
+                                </application>
+                            </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;{$PG_SR_LAG_BYTE}</expression>
+                                    <name>PostgreSQL streaming lag between {HOSTNAME} and {#HOTSTANDBY} to high ({ITEM.LASTVALUE})</name>
+                                    <priority>AVERAGE</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>streaming lag with {#HOTSTANDBY} in seconds</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.streaming.lag.seconds[{$PG_CONNINFO_STANDBY},{#HOTSTANDBY}]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>s</units>
+                            <description>ATTENTION: This check requires access to the remote server postgresql service, respectively, should be determined access in pg_hba.conf on remote server.&#13;
+                                Example:&#13;
+                                host zabbix postgres 1.2.3.4/32 trust</description>
+                            <applications>
+                                <application>
+                                    <name>Streaming Replication</name>
+                                </application>
+                            </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;{$PG_SR_LAG_SEC}</expression>
+                                    <name>PostgreSQL streaming lag between {HOSTNAME} and {#HOTSTANDBY} to high ({ITEM.LASTVALUE})</name>
+                                    <priority>AVERAGE</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>PostgreSQL streaming replication lag with {#HOTSTANDBY}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.streaming.lag.bytes[{$PG_CONNINFO},{#HOTSTANDBY}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>00CC00</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.streaming.lag.seconds[{$PG_CONNINFO_STANDBY},{#HOTSTANDBY}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Table Bloat Discovery ( {$ACTIVE_DB} )</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.table.bloat.discovery[{$PG_CONNINFO},{$ACTIVE_DB},{$BLOAT_WARN_BYTES},{$BLOAT_WARN_PERCENT}]</key>
+                    <delay>1800s</delay>
+                    <status>DISABLED</status>
+                    <lifetime>1h</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#TABLENAME}: Dead Tuple ( % )</name>
+                            <type>DEPENDENT</type>
+                            <key>bloat.approx_dead_tuple_percent[{#TABLENAME}]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.APPROX_DEAD_TUPLE_PERCENT</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#TABLENAME}: Table Bloat ( % )</name>
+                            <type>DEPENDENT</type>
+                            <key>bloat.approx_free_percent[{#TABLENAME}]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.APPROX_FREE_PERCENT</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#TABLENAME}: Free Space</name>
+                            <type>DEPENDENT</type>
+                            <key>bloat.approx_free_space[{#TABLENAME}]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>B</units>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.APPROX_FREE_SPACE</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#TABLENAME}: Scanned ( % )</name>
+                            <type>DEPENDENT</type>
+                            <key>bloat.scanned_percent[{#TABLENAME}]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.SCANNED_PERCENT</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#TABLENAME}: Table Size</name>
+                            <type>DEPENDENT</type>
+                            <key>bloat.table_size[{#TABLENAME}]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>B</units>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <params>$.TABLE_LEN</params>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            </master_item>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Get Table Bloat: {#TABLENAME}</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.bloat.values[{$PG_CONNINFO},{$ACTIVE_DB},{#TABLENAME}]</key>
+                            <delay>300s</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template DB PostgreSQL:bloat.approx_free_percent[{#TABLENAME}].last()}&gt;=65 and {Template DB PostgreSQL:bloat.approx_free_space[{#TABLENAME}].last()}&gt;=4294967296</expression>
+                            <name>Bloat Critical : {#TABLENAME}</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>( {Template DB PostgreSQL:bloat.approx_free_space[{#TABLENAME}].last()}&gt;=734003200 and&#13;
+                                {Template DB PostgreSQL:bloat.approx_free_percent[{#TABLENAME}].last()}&gt;=25 ) and not&#13;
+                                ( {Template DB PostgreSQL:bloat.approx_free_percent[{#TABLENAME}].last()}&gt;=65 and {Template DB PostgreSQL:bloat.approx_free_space[{#TABLENAME}].last()}&gt;=4294967296 )</expression>
+                            <name>Bloat Warning : {#TABLENAME}</name>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>{#TABLENAME}: Table Statistics</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>bloat.approx_dead_tuple_percent[{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>bloat.approx_free_space[{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>A54F10</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>bloat.approx_free_percent[{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>PostgreSQL database tables discovery</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>pgsql.table.discovery[{$PG_CONNINFO}]</key>
+                    <delay>3600</delay>
+                    <status>DISABLED</status>
+                    <lifetime>1d</lifetime>
+                    <description>PostgreSQL tables discovery. Use regular expressions to configure search.&#13;
+                        Disabled by default because may add too many items.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} indexes size</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.index.size[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>900</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>b</units>
+                            <description>PostgreSQL all indexes size which belongs to a single table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} size</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.size[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>900</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>b</units>
+                            <description>PostgreSQL single table size.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: analyzes</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.analyze_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>600</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of analyze operations performed on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: autoanalyzes</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.autoanalyze_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>600</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of autoanalyze operations performed on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: autovacuums</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.autovacuum_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>600</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of autovacuum operations performed on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: cache blocks hits per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.heap_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of buffer hits in this table</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: cache blocks read per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.heap_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of disk blocks read from this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: index blocks hit per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.idx_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of buffer hits in all indexes on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: index blocks read per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.idx_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of disk blocks read from all indexes on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: index scans</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.idx_scan[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of index scans initiated on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: tuples read per second by index scans</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.idx_tup_fetch[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of live rows fetched by index scans.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: dead rows</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_dead_tup[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Estimated number of dead rows.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: live rows</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_live_tup[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Estimated number of live rows.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: rows deleted per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_tup_del[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of rows deleted.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: rows HOT updated per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_tup_hot_upd[{$PG_CONNINFO},{#DBNAME},#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of rows HOT updated (i.e., with no separate index update required).</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: rows inserted per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_tup_ins[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of rows inserted.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: rows updated per second</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.n_tup_upd[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of rows updated.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: sequential scans</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.seq_scan[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of sequential scans initiated on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: tuples read per second by sequential scans</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.seq_tup_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of live rows fetched by sequential scans.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: disk blocks hits per second from TOAST indexes</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.tidx_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of buffer hits in this table's TOAST table index (if any).</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: disk blocks read per second from TOAST indexes</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.tidx_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of disk blocks read from this table's TOAST table index (if any).</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: disk blocks hits per second from TOAST</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.toast_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of buffer hits in this table's TOAST table (if any).</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: disk blocks read per second from TOAST</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.toast_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>120</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of disk blocks read from this table's TOAST table (if any).</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} stat: vacuums</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.stat.vacuum_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>600</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <description>Number of vacuum operations performed on this table.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>SIMPLE_CHANGE</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DBNAME}: table {#TABLENAME} rows count</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>pgsql.table.tuples[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                            <delay>900</delay>
+                            <history>30d</history>
+                            <trends>180d</trends>
+                            <value_type>FLOAT</value_type>
+                            <description>PostgreSQL single table rows count.</description>
+                            <applications>
+                                <application>
+                                    <name>Table Info: Bloat</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>PostgreSQL table {#TABLENAME} maintenance</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>00CC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.analyze_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.autoanalyze_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>CC0000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.autovacuum_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>CCCC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.vacuum_count[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>PostgreSQL table {#TABLENAME} read stats</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>00CC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.heap_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>000000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.heap_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>99FFFF</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.toast_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>FFFF99</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.tidx_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>00CCCC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.toast_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>5</sortorder>
+                                    <color>CCCC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.tidx_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>6</sortorder>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.idx_blks_hit[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>7</sortorder>
+                                    <color>CC0000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.idx_blks_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>PostgreSQL table {#TABLENAME} rows</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>00CC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_live_tup[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>666666</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_dead_tup[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_tup_del[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>CC0000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_tup_hot_upd[{$PG_CONNINFO},{#DBNAME},#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>00CCCC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_tup_ins[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>5</sortorder>
+                                    <color>CCCC00</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.n_tup_upd[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>PostgreSQL table {#TABLENAME} scans</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>00CC00</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.idx_scan[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>000000</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.seq_scan[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.idx_tup_fetch[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>CC0000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.stat.seq_tup_read[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>PostgreSQL table {#TABLENAME} size</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>0000CC</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.size[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>CC0000</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.index.size[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>00CC00</color>
+                                    <item>
+                                        <host>Template DB PostgreSQL</host>
+                                        <key>pgsql.table.tuples[{$PG_CONNINFO},{#DBNAME},{#TABLENAME}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$AUTOVAC_FREEZE_AGE_CRITICAL_PERCENT}</macro>
+                    <value>95</value>
+                </macro>
+                <macro>
+                    <macro>{$AUTOVAC_FREEZE_AGE_WARN_PERCENT}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$BLOAT_CRITICAL_BYTES}</macro>
+                    <value>4294967296</value>
+                </macro>
+                <macro>
+                    <macro>{$BLOAT_CRITICAL_PERCENT}</macro>
+                    <value>65</value>
+                </macro>
+                <macro>
+                    <macro>{$BLOAT_WARN_BYTES}</macro>
+                    <value>734003200</value>
+                </macro>
+                <macro>
+                    <macro>{$BLOAT_WARN_PERCENT}</macro>
+                    <value>25</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CACHE_HIT_RATIO}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CHECKPOINTS_REQ_THRESHOLD}</macro>
+                    <value>5</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONFLICTS_THRESHOLD}</macro>
+                    <value>0</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONNINFO}</macro>
+                    <value>-h 127.0.0.1 -p 5432 -U zabbix</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONNINFO_STANDBY}</macro>
+                    <value>-p 5432 -U zabbix</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONN_IDLE_IN_TRANSACTION}</macro>
+                    <value>3</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONN_TOTAL_PCT}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_CONN_WAITING}</macro>
+                    <value>0</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_DATABASE_SIZE_THRESHOLD}</macro>
+                    <value>100000000000</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_DEADLOCKS_THRESHOLD}</macro>
+                    <value>0</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_LONG_QUERY_THRESHOLD}</macro>
+                    <value>30</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_PING_THRESHOLD_MS}</macro>
+                    <value>1000</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_PROCESS_NAME}</macro>
+                    <value>postmaster</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_SR_LAG_BYTE}</macro>
+                    <value>50000000</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_SR_LAG_SEC}</macro>
+                    <value>600</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_SR_PACKET_LOSS}</macro>
+                    <value>10</value>
+                </macro>
+                <macro>
+                    <macro>{$PG_UPTIME_THRESHOLD}</macro>
+                    <value>600</value>
+                </macro>
+            </macros>
+            <screens>
+                <screen>
+                    <name>PostgreSQL performance</name>
+                    <hsize>2</hsize>
+                    <vsize>6</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL service response</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL uptime</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL bgwriter</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL connections</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL checkpoints</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL transactions</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL write-ahead log</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL buffers</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL stats: events</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL stats: tuples</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL stats: block hit/read</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <style>0</style>
+                            <resource>
+                                <name>PostgreSQL stats: temp files</name>
+                                <host>Template DB PostgreSQL</host>
+                            </resource>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <url/>
+                            <application/>
+                            <max_columns>3</max_columns>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <name>PostgreSQL bgwriter</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.buffers_alloc[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.buffers_clean[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.buffers_backend[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>CCCC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.buffers_checkpoint[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>777777</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.maxwritten_clean[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>CC00CC</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.buffers_backend_fsync[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL buffers</name>
+            <show_work_period>NO</show_work_period>
+            <show_triggers>NO</show_triggers>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>EEEEEE</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.buffercache.total[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>FILLED_REGION</drawtype>
+                    <color>0000EE</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.buffercache.used[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>FILLED_REGION</drawtype>
+                    <color>00EE00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.buffercache.clear[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <drawtype>FILLED_REGION</drawtype>
+                    <color>EE0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.buffercache.dirty[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL checkpoints</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>00CC00</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.checkpoints_timed[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>CC0000</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.checkpoints_req[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>000000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.checkpoint_sync_time[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.bgwriter.checkpoint_write_time[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL connections</name>
+            <percent_right>100</percent_right>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>EEEEEE</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.total[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>00BB00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.active[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>0000BB</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.idle[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>CC00CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.idle_in_transaction[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>000000</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.total_pct[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>BB0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.connections.waiting[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL service response</name>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.ping[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.pgstatstatements.avg_query_time[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL stats: block hit/read</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.blks_hit[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.blks_read[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL stats: events</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.xact_commit[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.conflicts[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>000000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.deadlocks[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.xact_rollback[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL stats: temp files</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>CC0000</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.temp_bytes[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.temp_files[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL stats: tuples</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>000000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.tup_deleted[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.tup_inserted[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.tup_updated[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.tup_fetched[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>CC00CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.dbstat.sum.tup_returned[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL transactions</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>00CC00</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.transactions.active[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>000000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.transactions.idle[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>00CCCC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.transactions.prepared[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>CC0000</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.transactions.waiting[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL uptime</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>00CC00</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.cache.hit[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.uptime[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PostgreSQL write-ahead log</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>0000CC</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.wal.count[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>00CC00</color>
+                    <item>
+                        <host>Template DB PostgreSQL</host>
+                        <key>pgsql.wal.write[{$PG_CONNINFO}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
